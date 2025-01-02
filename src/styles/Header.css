@@ -1,0 +1,71 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.left-section,
+.center-section,
+.right-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.skeleton {
+    height: 15px;
+    width: 15px;
+    background-color: #9c9c9c;
+    border-radius: 100%;
+}
+
+.center-section {
+    background-color: #ccc;
+    border-radius: 10px;
+    animation: pulse 1.5s infinite;
+    
+}
+
+.icon-center {
+    padding: 10px 15px 10px 15px;
+    font-size: 15px;
+}
+
+.icon {
+    font-size: 20px;
+    color: #333;
+}
+
+.spin {
+    animation: spin 1s linear infinite;
+}
+
+.link {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1%;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
