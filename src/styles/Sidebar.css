@@ -35,7 +35,29 @@
     opacity: 0.7;
     margin: 0;
   }
-  
+
+  .sidebar-icons-top {
+    display: flex;
+    font-size: 15px; /* Corrected from 15x to 15px */
+    position: absolute;
+    margin-left: 17rem;
+}
+
+.sidebar-icons-top > div {
+    margin-right: 20px; /* Adds spacing between the children */
+}
+
+.sidebar-icons-top > div:last-child {
+    margin-right: 0; /* Removes extra margin from the last child */
+}
+
+
+  .sidebar-icons-bg {
+    background-color: #ffffff;
+    border-radius: 5px;
+    border: 2px solid black;
+    padding: 3px 5px 3px 5px;
+  }
   .sidebar-icons {
     display: flex;
     position: absolute;
@@ -94,5 +116,64 @@
   .button.active {
     background-color: #ffffff;
   }
+
+
   
+  .dropdown-section {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+    justify-content: center;
+    
+  }
+  
+  .dropdown-group,
+  .dropdown-label {
+    position: relative;
+    
+  }
+  
+  .dropdown-button {
+    display: flex; /* Make the button content flex items */
+    align-items: center; /* Vertically align the icon and text */
+    justify-content: center; /* Center the content horizontally */
+    padding: 0.8rem 1rem;
+    border: none;
+    background-color: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    gap: 20px; /* Add gap between icon and text */
+}
+
+.group-filter-icon {
+    font-size: 18px;
+}
+
+.sidebar-dropdown-icon {
+    font-size: 18px;
+}
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+  }
+  
+  .dropdown-group:hover .dropdown-content,
+  .dropdown-label:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown-content button {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+  }
   

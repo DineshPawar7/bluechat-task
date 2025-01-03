@@ -1,47 +1,61 @@
 import React, { useState } from "react";
+import ContactList from "./ContactList";
 import "../styles/Sidebar.css";
-import { FaSearch } from "react-icons/fa";
-import { FaPlus } from "react-icons/fa6";
+import { FaSearch, FaPlus, FaFilter } from "react-icons/fa";
+import { MdOutlineGroups2 } from "react-icons/md";
+import { RiArrowDropDownLine } from "react-icons/ri";
 
 
 
 const Sidebar = () => {
-  const [activeTab, setActiveTab] = useState("messages");
+  const [ setSelectedContact ] = useState(null);
 
-  const handleTabChange = (tab) => {
-    setActiveTab(tab);
+  const handleContactClick = (contact) => {
+    setSelectedContact(contact);
   };
 
   return (
     <div className="sidebar">
       {/* Logo Section */}
       <div className="logo-section">
-        <img src="data:image/jpeg;base64,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" alt="Logo" className="logo" />
+        <img src="data:image/jpeg;base64,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" alt="Logo" className="logo" />
         <div className="logo-text">
           <h1>BlueChat</h1>
           <h2>Inbox</h2>
         </div>
-        <div className="sidebar-icons">
-          <div className="sidebar-icon sidebar-search-icon"><FaSearch /></div>
-          <div className="sidebar-icon sidebar-create-icon"><FaPlus /></div>
+        <div className="sidebar-icons-top">
+          <div className="sidebar-icons"><FaSearch /></div>
+          <div className="sidebar-icons-bg"><FaPlus /></div>
         </div>
       </div>
 
       {/* Buttons Section */}
       <div className="buttons-section">
-        <button
-          className={`button ${activeTab === "messages" ? "active" : ""}`}
-          onClick={() => handleTabChange("messages")}
-        >
-          Messages
-        </button>
-        <button
-          className={`button ${activeTab === "segments" ? "active" : ""}`}
-          onClick={() => handleTabChange("segments")}
-        >
-          Segments
-        </button>
+        <button className="button active">Messages</button>
+        <button className="button">Segments</button>
       </div>
+
+      {/* Dropdown Section */}
+      <div className="dropdown-section">
+        <div className="dropdown-group">
+          <button className="dropdown-button"><MdOutlineGroups2 className="group-filter-icon" />All <RiArrowDropDownLine className="sidebar-dropdown-icon" /></button>
+          <div className="dropdown-content">
+            <button>All Numbers</button>
+            <button>Saved Numbers</button>
+          </div>
+        </div>
+        <div className="dropdown-label">
+          <button className="dropdown-button">< FaFilter className="group-filter-icon" />Oldest <RiArrowDropDownLine className="sidebar-dropdown-icon" /></button>
+          <div className="dropdown-content">
+            <button>Older</button>
+            <button>News</button>
+            <button>Recent</button>
+          </div>
+        </div>
+      </div>
+
+      {/* Contact List */}
+      <ContactList onContactClick={handleContactClick} />
     </div>
   );
 };

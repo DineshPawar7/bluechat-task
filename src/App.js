@@ -1,3 +1,4 @@
+import ContactList from "./components/ContactList";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 
@@ -6,7 +7,8 @@ function App() {
     <div>
       <Header />
       <Sidebar />
-      
+      <ContactList />
+
 
     </div>
   );
