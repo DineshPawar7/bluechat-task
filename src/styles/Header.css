@@ -14,15 +14,26 @@
     align-items: center;
     gap: 10px;
 }
-
+.skeleton-1 {
+    height: 15px;
+    width: 15px;
+    background-color: #d9d9d9;
+    border-radius: 100%;
+}
+.header-sidebar-icon {
+    font-size: 20px;
+    margin-right: 10px;
+}
 .skeleton {
     height: 15px;
     width: 15px;
     background-color: #9c9c9c;
     border-radius: 100%;
+
 }
 
 .center-section {
+    
     background-color: #ccc;
     border-radius: 10px;
     animation: pulse 1.5s infinite;
@@ -35,7 +46,7 @@
 }
 
 .icon {
-    font-size: 20px;
+    font-size: 15px;
     color: #333;
 }
 
@@ -47,6 +58,9 @@
     text-decoration: none;
     color: #000;
     font-weight: bold;
+}
+.right-section .icon {
+    font-size: 20px;
 }
 
 @keyframes pulse {
